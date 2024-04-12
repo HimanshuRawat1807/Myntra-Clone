@@ -1,14 +1,18 @@
-import CategoryCardContainer from "./CategoryCardContainer";
+import CategoryCardsContainer from "./CategoryCardsContainer";
 import SimpleImageSlider from "react-simple-image-slider";
 
 import { HomeData, slider as images, slider } from "../../src/store/HomeData";
+import { useEffect, useState } from "react";
 
 function Main() {
-  HomeData().then((res) => {
-    console.log(res);
-  });
+  const [shopByCategory, setShopByCategory] = useState([]);
 
-  console.log(slider);
+  useEffect(() => {
+    HomeData().then((res) => {
+      console.log(res);
+      setShopByCategory(res.HomePageShopByCategory);
+    });
+  }, []);
 
   return (
     <>
@@ -58,25 +62,11 @@ function Main() {
               />
               <div className="row p-0">
                 <div className="col p-0">
-                  {/*  first line */}
+                  {/*  Shop By Category */}
 
-                  <CategoryCardContainer />
-
-                  {/*  second line */}
-
-                  <CategoryCardContainer />
-
-                  {/*  third line */}
-
-                  <CategoryCardContainer />
-
-                  {/*  fourth line  */}
-
-                  <CategoryCardContainer />
-
-                  {/*  fifth line */}
-
-                  <CategoryCardContainer />
+                  <CategoryCardsContainer
+                    shopByCategory={shopByCategory}
+                  ></CategoryCardsContainer>
                 </div>
               </div>
             </div>

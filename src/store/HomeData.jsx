@@ -1,7 +1,8 @@
 import axios from "axios";
+import { useEffect } from "react";
+
 export const HomeData = async () => {
   let res = await axios.get("https://vastra.onrender.com/HomePageData");
-  // let res= await axios.get("http://localhost:8080/HomePageData")
 
   return res.data;
 };

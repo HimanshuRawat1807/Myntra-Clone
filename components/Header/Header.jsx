@@ -6,7 +6,11 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileDropDown from "./ProfileDropDown";
-import NavMenu from "../NavMenu/NavMenu";
+import MenMenu from "../NavMenus/MenMenu";
+import WomenMenu from "../NavMenus/WomenMenu";
+import HomeAndLiving from "../NavMenus/HomeAndLiving";
+import KidsMenu from "../NavMenus/KidsMenu";
+import BeautyMenu from "../NavMenus/BeautyMenu";
 
 function Header() {
   const bag = useSelector((store) => store.bag);
@@ -33,62 +37,62 @@ function Header() {
                 >
                   Men
                 </Link>
-                <NavMenu className="" />
+                <MenMenu />
               </li>
               <li className="nav-item">
                 <Link
-                  to="/men"
+                  to="/women"
                   className="nav-link pe-4"
                   aria-current="page"
                   href="#"
                 >
                   Women
                 </Link>
-                <NavMenu className="" />
+                <WomenMenu />
               </li>
               <li className="nav-item">
                 <Link
-                  to="/men"
+                  to="/Kids"
                   className="nav-link pe-4"
                   aria-current="page"
                   href="#"
                 >
                   Kids
                 </Link>
-                <NavMenu className="" />
+                <KidsMenu />
               </li>
               <li className="nav-item">
                 <Link
-                  to="/men"
+                  to="/home&living"
                   className="nav-link pe-4"
                   aria-current="page"
                   href="#"
                 >
-                  Home& living
+                  Home & living
                 </Link>
-                <NavMenu className="" />
+                <HomeAndLiving />
               </li>
               <li className="nav-item">
                 <Link
-                  to="/men"
+                  to="/beauty"
                   className="nav-link pe-4"
                   aria-current="page"
                   href="#"
                 >
                   beauty
                 </Link>
-                <NavMenu className="" />
+                <BeautyMenu />
               </li>
               <li className="nav-item">
                 <Link
-                  to="/men"
+                  to="/studio"
                   className="nav-link pe-4"
                   aria-current="page"
                   href="#"
                 >
                   Studio
                 </Link>
-                <NavMenu className="" />
+                {/* <NavMenu className="" /> */}
               </li>
               {/* </div> */}
             </ul>
